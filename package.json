@@ -1,0 +1,17 @@
+{
+  "name": "tc_multiplication_calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator for tissue culture multiplication",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jim Kerver",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^14.2.9"
+  },
+  "dependencies": {
+    "electronmon": "^2.0.2"
+  }
+}

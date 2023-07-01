@@ -1,0 +1,39 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="./renderer.js"></script>
+    <title>Simple Tissue Culture Multiplication Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <h2>For Tissue Culture Multiplication</h2>
+    <div class="form">
+      <form>
+        <div>
+          <label for="cycles">Cycles</label>
+          <input type="number" name="cycles" id="cycles" min 0>
+        </div>
+        <div>
+          <label for="mf">MF</label>
+          <input type="number" name="mf" id="mf" min 0 max 10>
+        </div>
+        <div>
+          <label for="stock">Stock</label>
+          <input type="text" name="stock" id="stock">
+        </div>
+        <div>
+          <label for="plants">Plants</label>
+          <input type="text" name="plants" id="plants">
+        </div>
+        <button type="reset">Clear</button>
+        <button id='calculateBtn' type="button">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
