@@ -43,25 +43,19 @@ function evalValues(){
 }
 
 function calculateCycles(myValues){
-    if(myValues.stock*myValues.mf >= myValues.plants) {myValues.cycles = 1;}
-    else{myValues.cycles = (myValues.plants/myValues.stock)**(1/myValues.mf);}
-    //myValues.cycles = Math.ceil(myValues.cycles)
+    myValues.cycles = Math.ceil((log(myValues.plants)-log(myValues.stock))/log(myValues.mf));
 }
 
 function calculateMultiplicationFactor(myValues){
-    if(myValues.cycles === 1){myValues.mf = myValues.plants/myValues.stock;}
-    else{myValues.mf = Math.log(myValues.plants/myValues.stock)/Math.log(myValues.cycles);}
+    myValues.mf = (myValues.plants/myValues.stock)**(1/myValues.cycles);
 }
 
 function calculateStock(myValues){
-    if(myValues.cycles === 1) {myValues.stock = myValues.plants/myValues.mf}
-    else{myValues.stock = myValues.plants*(myValues.cycles**-myValues.mf)}
-    myValues.stock=Math.ceil(myValues.stock)
+    myValues.stock=Math.ceil(myValues.plants/(myValues.mf**myValues.cycles));
 }
 
 function calculatePlants(myValues){
-    if(myValues.cycles === 1){myValues.plants = myValues.mf*myValues.stock;}
-    else{myValues.plants = ((myValues.cycles)**myValues.mf)*myValues.stock;}
+    myValues.plants = (myValues.mf**myValues.cycles)*myValues.stock;
 }
 
 function assignValues(myValues){
